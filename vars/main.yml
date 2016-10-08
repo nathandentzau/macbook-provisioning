@@ -1,0 +1,37 @@
+homebrew_installed_packages:
+  - bash-completion
+  - git
+  - keybase
+  - mcrypt
+  - mysql
+  - npm
+  - php70
+  - php70-mcrypt
+  - php70-xdebug
+  - python
+  - ssh-copy-id
+  - sqlite
+  - tmux
+  - openssl
+  - vim
+  - wget
+  - zsh
+
+homebrew_taps:
+  - homebrew/core
+  - caskroom/cask
+  - homebrew/dupes
+  - homebrew/php
+  - homebrew/versions
+
+homebrew_cask_apps:
+  - alfred
+  - docker
+  - filezilla
+  - google-chrome
+  - querious
+  - skype
+  - slack
+  - sonos
+  - vagrant
+  - virtualbox
