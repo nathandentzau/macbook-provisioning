@@ -4,11 +4,11 @@ homebrew_installed_packages:
   - keybase
   - mcrypt
   - mysql
-  - neovim
+  - neovim/neovim/neovim
   - npm
   - php70
-  - php70-mcrypt
-  - php70-xdebug
+#  - php70-mcrypt
+#  - php70-xdebug
   - python
   - ssh-copy-id
   - sqlite
@@ -16,7 +16,7 @@ homebrew_installed_packages:
   - openssl
   - vim
   - wget
-  - zsh
+#  - zsh
 
 homebrew_taps:
   - homebrew/core

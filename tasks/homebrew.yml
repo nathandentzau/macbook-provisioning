@@ -1,0 +1,15 @@
+- name: Ensure correct permissions for homebrew binaries
+  file:
+    path: /usr/local/bin
+    owner: '{{whoami.stdout}}'
+    group: admin
+    recurse: yes
+  become: yes
+
+- name: Ensure homebrew apps are linked
+  homebrew:
+    name: '{{item}}'
+    state: linked
+  with_items: '{{homebrew_installed_packages}}'
+  ignore_errors: true
+

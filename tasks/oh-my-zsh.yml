@@ -1,0 +1,44 @@
+- name: Download oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
+  register: ohmyzsh_download
+  become: no
+
+- name: Install oh-my-zsh
+  copy:
+    src: ~/.oh-my-zsh/templates/zshrc.zsh-template
+    dest: ~/.zshrc
+  when: ohmyzsh_download | success
+  become: no
+
+- name: Set default shell to zsh
+  user: 
+    name: '{{whoami.stdout}}'
+    shell: /bin/zsh
+  become: yes
+
+- name: Download materialshell theme
+  git:
+    repo: https://github.com/carloscuesta/materialshell
+    dest: ~/Downloads/materialshell
+  register: materialshell_download
+  become: no
+
+- name: Install materialshell theme
+  copy: 
+    src: ~/Downloads/materialshell/zsh/materialshell-oceanic.zsh-theme
+    dest: ~/.oh-my-zsh/themes/materialshell-oceanic.zsh-theme
+  become: no
+
+- name: Enable materialshell theme
+  lineinfile: 
+    dest: ~/.zshrc
+    regexp: '^ZSH_THEME='
+    line: ZSH_THEME="materialshell-oceanic"
+
+- name: Enable zsh in tmux
+  lineinfile:
+    dest: ~/.tmux.conf
+    line: 'set-option -g default-shell /bin/zsh'
+
