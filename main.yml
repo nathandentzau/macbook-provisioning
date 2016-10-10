@@ -4,8 +4,8 @@
   vars_files:
     - vars/main.yml
 
-#  roles:
-#    - geerlingguy.homebrew
+  roles:
+    - geerlingguy.homebrew
 
   tasks:
     - include: tasks/systemvars.yml

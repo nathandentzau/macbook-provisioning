@@ -7,8 +7,8 @@ homebrew_installed_packages:
   - neovim/neovim/neovim
   - npm
   - php70
-#  - php70-mcrypt
-#  - php70-xdebug
+  - php70-mcrypt
+  - php70-xdebug
   - python
   - ssh-copy-id
   - sqlite
@@ -16,7 +16,6 @@ homebrew_installed_packages:
   - openssl
   - vim
   - wget
-#  - zsh
 
 homebrew_taps:
   - homebrew/core
@@ -35,5 +34,6 @@ homebrew_cask_apps:
   - skype
   - slack
   - sonos
+  - sublime-text
   - vagrant
   - virtualbox
