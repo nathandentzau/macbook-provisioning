@@ -20,7 +20,7 @@
       - micro
       - mcrypt
       - mysql
-      - npm
+      - node
       - openssl
       - php70
       - php70-mcrypt
