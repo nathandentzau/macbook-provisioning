@@ -15,7 +15,6 @@
       - dockutil
       - drush
       - git
-      - keybase
       - micro
       - mcrypt
       - mysql
@@ -38,6 +37,7 @@
       - flux
       - google-chrome
       - iterm2
+      - keybase
       - postman
       - querious
       - slack
