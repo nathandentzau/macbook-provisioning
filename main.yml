@@ -79,17 +79,21 @@
         path: /Applications/iTerm.app
         position: 7
 
+      - name: Spotify
+        path: /Applications/Spotify.app
+        position: 8
+
       - name: Sonos
         path: /Applications/Sonos.app
-        position: 8
+        position: 9
 
       - name: Notes
         path: /Applications/Notes.app 
-        position: 9
+        position: 10
 
       - name: System Preferences
         path: '/Applications/System Preferences.app'
-        position: 10
+        position: 11
 
     sublime_packages:
       - name: SublimePHPCompanion
