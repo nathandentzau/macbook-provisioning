@@ -148,8 +148,8 @@
       gem:
       name: "{{ item }}"
       state: present
-        become: no
-        with_items: "{{ ruby_gem_packages }}"
+      become: no
+      with_items: "{{ ruby_gem_packages }}"
 
     - name: Install npm packages
       shell: "npm install --global {{ item }}"
