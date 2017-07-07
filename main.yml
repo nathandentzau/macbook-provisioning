@@ -75,8 +75,8 @@
         path: /Applications/Querious.app
         position: 6
 
-      - name: Terminal
-        path: /Applications/Utilities/Terminal.app
+      - name: iTerm2
+        path: /Applications/iTerm.app
         position: 7
 
       - name: Sonos
