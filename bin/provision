@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Run the ansible playbook
+ansible-playbook main.yml -i inventory -K

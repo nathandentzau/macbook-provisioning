@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Install macOS developer tools
+xcode-select --install
+
+# Install ansible
+easy_install pip
+pip install ansible

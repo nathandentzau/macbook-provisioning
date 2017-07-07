@@ -1,4 +1,0 @@
-- shell: whoami
-  become: no
-  register: whoami
-

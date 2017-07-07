@@ -1,0 +1,7 @@
+- name: Copy wallpaper to the Pictures directory
+  copy:
+    src: files/wallpaper.jpg
+    dest: ~/Pictures/wallpaper.jpg
+
+- name: Set default macOS wallpaper
+  shell: osascript -e 'tell application "Finder" to set desktop picture to "/Users/{{macos_user.stdout}}/Pictures/wallpaper.jpg" as POSIX file'

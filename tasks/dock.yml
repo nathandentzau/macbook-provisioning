@@ -1,0 +1,13 @@
+- name: Remove all items from the dock
+  shell: dockutil --remove all --no-restart
+
+- name: Add items to the dock
+  shell: dockutil --add '{{item.path}}' --no-restart
+  with_items: '{{dock_items}}'
+
+- name: Reposition items inside of the dock
+  shell: dockutil --move '{{item.name}}' --position {{item.position}} --no-restart
+  with_items: '{{dock_items}}'
+
+- name: Restart the dock
+  shell: killall Dock

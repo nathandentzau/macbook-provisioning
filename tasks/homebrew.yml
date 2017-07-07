@@ -12,4 +12,3 @@
     state: linked
   with_items: '{{homebrew_installed_packages}}'
   ignore_errors: true
-

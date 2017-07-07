@@ -1,0 +1,28 @@
+- name: Create Sublime Text 3 directories
+  file:
+    path: '{{ item }}'
+    state: directory
+    recurse: yes
+  with_items:
+    - '~/Library/Application Support/Sublime Text 3'
+    - '~/Library/Application Support/Sublime Text 3/Packages'
+    - '~/Library/Application Support/Sublime Text 3/Packages/User'
+    - '~/Library/Application Support/Sublime Text 3/Installed Packages'
+
+- name: Download PackageControl
+  get_url:
+    url: 'http://sublime.wbond.net/Package%20Control.sublime-package'
+    dest: '~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package'
+
+- name: Install and update packages
+  git: 
+    update: yes
+    version: '{{ item.version }}' 
+    repo: '{{ item.repo }}' 
+    dest: '~/Library/Application Support/Sublime Text 3/Packages/{{ item.name }}'
+  with_items: '{{ sublime_packages }}'
+
+- name: Set the Sublime user settings
+  template: 
+    src: templates/Preferences.sublime-settings.j2
+    dest: '~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings'

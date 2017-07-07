@@ -1,0 +1,9 @@
+- name: Install the git fixup command
+  template: 
+    src: templates/git-fixup.j2
+    dest: /usr/local/bin/git-fixup
+
+- name: Ensure the git fixup command is excutable
+  file: 
+    path: /usr/local/bin/git-fixup
+    mode: a+x
