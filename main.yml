@@ -8,6 +8,7 @@
       - homebrew/dupes
       - homebrew/php
       - homebrew/versions
+      - caskroom/versions
 
     homebrew_installed_packages:
       - bash-completion
@@ -43,7 +44,7 @@
       - sonos
       - spectacle
       - spotify
-      - sublime-text
+      - sublime-text3
       - vagrant
       - virtualbox
       - viscosity
@@ -130,15 +131,29 @@
     - geerlingguy.homebrew
 
   pre_tasks:
+    - name: Ensure correct permissions for homebrew binaries
+      file:
+        path: /usr/local/bin
+        owner: "{{ whoami.stdout }}"
+        group: admin
+        recurse: yes
+      become: yes
+
     - name: Get the current user
       shell: whoami
       register: macos_user
       become: no
 
   tasks:
+    - name: Ensure homebrew apps are linked
+      homebrew:
+        name: "{{ item }}"
+        state: linked
+      with_items: "{{ homebrew_installed_packages }}"
+      ignore_errors: true
+
     - include: tasks/dock.yml
     - include: tasks/git-fixup.yml
-    - include: tasks/homebrew.yml
     - include: tasks/node.yml
     - include: tasks/oh-my-zsh.yml
     - include: tasks/ruby.yml
