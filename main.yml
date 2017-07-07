@@ -139,7 +139,7 @@
     - name: Ensure correct permissions for homebrew binaries
       file:
         path: /usr/local/bin
-        owner: "{{ whoami.stdout }}"
+        owner: "{{ macos_user.stdout }}"
         group: admin
         recurse: yes
       become: yes
