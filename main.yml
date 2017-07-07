@@ -9,7 +9,7 @@
       - homebrew/php
       - homebrew/versions
       - caskroom/versions
-      - cashroom/drivers
+      - caskroom/drivers
 
     homebrew_installed_packages:
       - bash-completion
