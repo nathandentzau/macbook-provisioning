@@ -3,4 +3,4 @@
     name: "{{ item }}"
     state: present
     become: no
-    with_items: "{{ ruby_gem_packages }}"
+  with_items: "{{ ruby_gem_packages }}"
