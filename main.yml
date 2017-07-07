@@ -131,6 +131,11 @@
     - geerlingguy.homebrew
 
   pre_tasks:
+    - name: Get the current user
+      shell: whoami
+      register: macos_user
+      become: no
+
     - name: Ensure correct permissions for homebrew binaries
       file:
         path: /usr/local/bin
@@ -138,11 +143,6 @@
         group: admin
         recurse: yes
       become: yes
-
-    - name: Get the current user
-      shell: whoami
-      register: macos_user
-      become: no
 
   tasks:
     - name: Ensure homebrew apps are linked
