@@ -144,4 +144,4 @@
     - include: tasks/oh-my-zsh.yml
     - include: tasks/ruby.yml
     - include: tasks/sublime.yml
-    - include: wallpaper.yml
+    - include: tasks/wallpaper.yml
