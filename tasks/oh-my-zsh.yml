@@ -12,6 +12,6 @@
 
 - name: Set default shell to zsh
   user: 
-    name: '{{terminal_user.stdout}}'
+    name: '{{ macos_user.stdout }}'
     shell: /bin/zsh
   become: yes
